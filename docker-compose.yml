@@ -4,25 +4,24 @@ services:
 
   wordpress:
     image: wordpress
-    restart: unless-stopped
+    restart: always
     ports:
       - 8080:80
     environment:
       WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: wordpress_user
-      WORDPRESS_DB_PASSWORD: iN!nfxYNzwi-2dwY7ox3Vt7.J
-      WORDPRESS_DB_NAME: db_wordpress
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
     volumes:
-      # - wordpress:/var/www/html
-      - ./www/:/var/www/html/
+      - wordpress:/var/www/html
 
   db:
     image: mysql:8.0
-    restart: unless-stopped
+    restart: always
     environment:
-      MYSQL_DATABASE: db_wordpress
-      MYSQL_USER: wordpress_user
-      MYSQL_PASSWORD: iN!nfxYNzwi-2dwY7ox3Vt7.J
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db:/var/lib/mysql
