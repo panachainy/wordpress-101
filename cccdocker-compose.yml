@@ -8,9 +8,7 @@ services:
     container_name: wordpres_wp
     restart: unless-stopped
     volumes:
-      - ./www/:/var/www/html/
-      ## from example.
-      # - wordpress:/var/www/html
+      - wordpress:/var/www/html
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_PASSWORD: iN!nfxYNzwi-2dwY7ox3Vt7.J
