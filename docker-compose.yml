@@ -44,5 +44,7 @@ services:
 networks:
   wp_network:
 volumes:
-  wordpress:
   db_data:
+  wordpress:
+
+
